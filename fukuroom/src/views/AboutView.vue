@@ -1,15 +1,29 @@
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
+  <div class="profile">
+    <p class="nes-balloon from-left nes-pointer is-dark">
+      うぉおおおおおおおお！！フォローしてね！！！
+    </p>
+    <i class="nes-bcrikko"></i>
+    <div class="sns">
+      <a href="https://twitter.com/digitalhimiko">
+        <i class="nes-icon twitter is-large"></i>
+      </a>
+      <a href="https://github.com/kumamoto-hamachi"><i class="nes-icon github is-large"></i></a>
+    </div>
   </div>
 </template>
 
 <style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
+.profile{
+  margin-top: 100px;
+}
+.nes-balloon{
+  display: block;
+}
+.sns{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  margin-top: 120px;
 }
 </style>
