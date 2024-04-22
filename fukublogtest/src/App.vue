@@ -1,65 +1,108 @@
-<template>
-  <div class="profile-link">
-    <a href="/experience" class="vertical-text">
-      <span v-for="(char, index) in experienceText" :key="index" :style="{ '--delay': (index + 0.3 ) * 0.5 + 's' }">{{ char }}</span>
-    </a>
-    <a href="/skills" class="vertical-text">
-      <span v-for="(char, index) in skillsText" :key="index" :style="{ '--delay': index * 0.5 + 's' }">{{ char }}</span>
-    </a>
-    <a href="/works" class="vertical-text">
-      <span v-for="(char, index) in worksText" :key="index" :style="{ '--delay': (index + 1) * 0.5 + 's' }">{{ char }}</span>
-    </a>
-    <a href="/profile" class="vertical-text">
-      <span v-for="(char, index) in text" :key="index" :style="{ '--delay': (index + 0.5) * 0.5 + 's' }">{{ char }}</span>
-    </a>
-  </div>
-</template>
-
 <script>
 export default {
-  data() {
-    return {
-      text: '人物'.split(''),
-      worksText: '作品集'.split(''),
-      skillsText: '技術'.split(''),
-      experienceText: '経歴'.split('')
-    }
-  }
+  name: 'App'
 }
 </script>
 
-<style>
-body {
-  background-color: #fff;
+<template>
+  <div class="home_link">
+    <a href="/person">人物</a>
+    <a href="/work">作品集</a>
+    <a href="/technology">技術</a>
+    <a href="/career">経歴</a>
+  </div>
+</template>
+
+<style >
+.site{
+  font-family: "NuKinakoMochiRegFont";
 }
 
-.profile-link {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.home_link {
+  font-family: "851tegaki_zatsu_normal_0883";
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100vh;
 }
 
-.vertical-text {
-  writing-mode: vertical-rl;
-  text-orientation: upright;
-  font-size: 24px;
+.home_link a {
+  color: black;
   text-decoration: none;
-  color: #000;
+  font-size: 30px;
 }
 
-.vertical-text span {
-  opacity: 0;
-  animation: fadeIn 2s forwards;
-  animation-delay: var(--delay);
+.home_link a:hover {
+  animation: shake 4s infinite; /* マウスオーバー時にアニメーションを適用 */
 }
 
-@keyframes fadeIn {
+.home_link a:not(:hover) {
+  opacity: 0.2; /* マウスオーバーしていないリンクを透明にする */
+}
+
+@keyframes shake {
   0% {
-    opacity: 0;
+    transform: translate3d(0, 0, 0);
+  }
+  5% {
+    transform: translate3d(-1px, 2px, 0);
+  }
+  10% {
+    transform: translate3d(0, 0, 0);
+  }
+  15% {
+    transform: translate3d(-3px, 2px, 0);
+  }
+  20% {
+    transform: translate3d(0, 0, 0);
+  }
+  25% {
+    transform: translate3d(-2px, -1px, 0);
+  }
+  30% {
+    transform: translate3d(0, 0, 0);
+  }
+  35% {
+    transform: translate3d(-1px, -2px, 0);
+  }
+  40% {
+    transform: translate3d(0, 0, 0);
+  }
+  45% {
+    transform: translate3d(-1px, 2px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  55% {
+    transform: translate3d(-2px, 1px, 0);
+  }
+  60% {
+    transform: translate3d(0, 0, 0);
+  }
+  65% {
+    transform: translate3d(-3px, 1px, 0);
+  }
+  70% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(-1px, 2px, 0);
+  }
+  80% {
+    transform: translate3d(0, 0, 0);
+  }
+  85% {
+    transform: translate3d(-2px, 2px, 0);
+  }
+  90% {
+    transform: translate3d(0, 0, 0);
+  }
+  95% {
+    transform: translate3d(-1px, 1px, 0);
   }
   100% {
-    opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 </style>
