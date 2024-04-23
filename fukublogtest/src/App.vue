@@ -5,39 +5,31 @@ export default {
 </script>
 
 <template>
-  <div class="home_link">
-    <a href="/person">人物</a>
-    <a href="/work">作品集</a>
-    <a href="/technology">技術</a>
-    <a href="/career">経歴</a>
+  <div class="top_link">
+    <a class="top_person" href="/person">人物</a>
+    <a class="top_work" href="/work">作品集</a>
+    <a class="top_technology" href="/technology">技術</a>
+    <a class="top_career" href="/career">経歴</a>
   </div>
 </template>
 
-<style >
-.site{
-  font-family: "NuKinakoMochiRegFont";
-}
+<style>
 
-.home_link {
-  font-family: "851tegaki_zatsu_normal_0883";
+.top_link {
+  font-family: '851tegaki_zatsu_normal_0883';
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* viewportの高さに合わせる */
 }
 
-.home_link a {
+.top_link a {
   color: black;
   text-decoration: none;
   font-size: 30px;
 }
-
-.home_link a:hover {
+.top_link a:hover {
   animation: shake 4s infinite; /* マウスオーバー時にアニメーションを適用 */
-}
-
-.home_link a:not(:hover) {
-  opacity: 0.2; /* マウスオーバーしていないリンクを透明にする */
 }
 
 @keyframes shake {
